@@ -8,14 +8,14 @@ Install packages:
 $ yarn
 ```
 
-| yarn script  | Description   |
-|---|---|
-| `yarn build` | Run TypeScript compiler with `tsconfig.build.json` |
-| `yarn format` | Prettier | 
-| `yarn start` |  Run `src/main.ts` with ts-node |
-| `yarn start:dev` | Run `nodemon` with watch |
-| `yarn lint` | Run `tslint` with fix |
-| `yarn test` | Run jest (with coverage, e2e) |
+| yarn script      | Description                                        |
+| ---------------- | -------------------------------------------------- |
+| `yarn build`     | Run TypeScript compiler with `tsconfig.build.json` |
+| `yarn format`    | Prettier                                           |
+| `yarn start`     | Run `src/main.ts` with ts-node                     |
+| `yarn start:dev` | Run `nodemon` with watch                           |
+| `yarn lint`      | Run `tslint` with fix                              |
+| `yarn test`      | Run jest (with coverage, e2e)                      |
 
 ### Develop in watch mode
 
