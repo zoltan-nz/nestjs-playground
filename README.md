@@ -27,6 +27,14 @@ $ yarn start:dev
 $ yarn test:watch
 ```
 
+## Requirements
+
+- [ ] Download data from a [json](https://www.stuff.co.nz/_json) file periodically.
+- [ ] Connect to MongoDB database.
+- [ ] Create a snapshot from the periodically downloaded data in the database with a timestamp.
+- [ ] Provide an `/api/stories` endpoint for query data from MongoDB.
+- [ ] The endpoint is graphql compatible.
+
 ## A NestJS Project
 
 <p align="center">
