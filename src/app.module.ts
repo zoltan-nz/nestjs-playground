@@ -1,9 +1,10 @@
-import { Module } from '@nestjs/common';
+import { HttpModule, Module } from '@nestjs/common';
 import { AppController } from './controllers/app.controller';
+import { JsonFetcherService } from './services/json-fetcher.service';
 
 @Module({
-  imports: [],
+  imports: [HttpModule],
   controllers: [AppController],
-  providers: [],
+  providers: [JsonFetcherService],
 })
 export class AppModule {}
