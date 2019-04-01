@@ -30,7 +30,7 @@ $ yarn test:watch
 ## Requirements
 
 - [ ] Download data from a [json](https://www.stuff.co.nz/_json) file periodically.
-- [ ] Mock remote server response with `moxios`.
+- [x] Mock remote server response with [`moxios`](https://github.com/axios/moxios).
 - [ ] Connect to MongoDB database.
 - [ ] Create a snapshot from the periodically downloaded data in the database with a timestamp.
 - [ ] Provide an `/api/stories` endpoint for query data from MongoDB.
@@ -39,6 +39,7 @@ $ yarn test:watch
 ## Notes
 
 - Using `axios` to download data, wrap it with Observable. Use `pipe` and `map` to get the real response before it passed to the controller.
+- Use [`moxios`](https://github.com/axios/moxios) for mocking external api requests.
 
 ## A NestJS Project
 
