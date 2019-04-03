@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 export class JsonFetcherService {
   constructor(private readonly httpService: HttpService) {}
 
-  fetch(url: string): Observable<AxiosResponse<any>> {
+  fetch<T>(url: string): Observable<T> {
     return this.httpService.get(url).pipe(map(response => response.data));
   }
 }

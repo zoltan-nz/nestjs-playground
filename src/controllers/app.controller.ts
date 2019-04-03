@@ -22,7 +22,7 @@ export class AppController {
   }
 
   @Get('articles')
-  fetchJson(): Observable<any> {
+  fetchArticles(): Observable<any> {
     return this.jsonFetcherService.fetch('https://www.stuff.co.nz/_json');
   }
 }
