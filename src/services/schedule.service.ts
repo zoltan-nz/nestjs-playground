@@ -2,6 +2,7 @@ import { Inject, Injectable, Logger } from '@nestjs/common';
 import { Cron, NestSchedule } from 'nest-schedule';
 import { JsonFetcherService } from './json-fetcher.service';
 import { Story } from '../models/story';
+import { ArticlesService } from './articles.service';
 
 @Injectable()
 export class ScheduleService extends NestSchedule {
@@ -10,12 +11,15 @@ export class ScheduleService extends NestSchedule {
   @Inject('JsonFetcherService')
   private readonly jsonFetcher: JsonFetcherService;
 
+  @Inject('ArticlesService')
+  private readonly articlesService: ArticlesService;
+
   // Every 10 seconds
   @Cron('*/10 * * * * *')
   async downloadFreshArticles() {
     this.logger.log(`executing cron job ${new Date().toLocaleTimeString()}`);
     this.jsonFetcher
       .fetch<Story>('https://www.stuff.co.nz/_json')
-      .subscribe(result => console.log(result.stories.map(story => story.id)));
+      .subscribe(result => result.stories.forEach(article => this.articlesService.create(article)));
   }
 }
