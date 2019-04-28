@@ -7,7 +7,7 @@ import { getModelToken, MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from 'nestjs-config';
 import { ArticlesService } from './services/articles.service';
 import * as path from 'path';
-import { ArticleSchema } from './schemas/article.schema';
+import { articleSchema } from './schemas/article.schema';
 import { Article } from './models/article';
 
 @Module({
@@ -20,14 +20,14 @@ import { Article } from './models/article';
       useFactory: (config: ConfigService) => ({ uri: config.get('mongodb.mongoServerAddress'), useNewUrlParser: true }),
       inject: [ConfigService],
     }),
-    MongooseModule.forFeature([{ name: 'Article', schema: ArticleSchema }]),
+    MongooseModule.forFeature([{ name: 'Article', schema: articleSchema }]),
   ],
   controllers: [AppController],
   providers: [
     JsonFetcherService,
     ScheduleService,
     ArticlesService,
-    { provide: getModelToken('ArticleModel'), useValue: ArticleSchema },
+    { provide: getModelToken('ArticleModel'), useValue: articleSchema },
   ],
 })
 export class AppModule {}
