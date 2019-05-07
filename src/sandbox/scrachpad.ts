@@ -7,29 +7,30 @@ async function main() {
 
   const db = mongoose.connection;
 
-  const ArticleModel = mongoose.model('Article', articleSchema)
+  const ArticleModel = mongoose.model('Article', articleSchema);
 
   const articles = await ArticleModel.find();
-  console.log(articles)
+  console.log(articles);
 
   let duplicates = [];
 
   ArticleModel.aggregate([
     {
-      $match: {$ne: ''}
+      $match: { $ne: '' },
     },
     {
       $group: {
         _id: { id: 'id' },
         dups: { $addToSet: '$_id' },
-        count: { $sum: 1 }
-      }
-    }
-  ])
-    .exec(result => result.forEach(doc => {
+        count: { $sum: 1 },
+      },
+    },
+  ]).exec(result =>
+    result.forEach(doc => {
       doc.dups.shift();
-      doc.dups.forEach(dupId => duplicates.push(dupId))
-    }));
+      doc.dups.forEach(dupId => duplicates.push(dupId));
+    }),
+  );
 
   console.log(duplicates);
 }

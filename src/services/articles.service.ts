@@ -5,7 +5,7 @@ import { InjectModel } from '@nestjs/mongoose';
 
 @Injectable()
 export class ArticlesService {
-  constructor(@InjectModel('IArticle') private readonly articleModel: Model<Article>) {}
+  constructor(@InjectModel('Article') private readonly articleModel: Model<Article>) {}
 
   async create(article: Article): Promise<Article> {
     return new this.articleModel(article).save();

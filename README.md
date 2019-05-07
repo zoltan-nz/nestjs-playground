@@ -19,6 +19,12 @@ $ yarn
 
 ### Develop in watch mode
 
+Run MongoDB in docker
+
+```bash
+$ docker run -p 27017:27017 mongo
+```
+
 Run the following commands in separated terminal:
 
 ```
@@ -31,7 +37,7 @@ $ yarn test:watch
 
 - [x] Download data from a [json](https://www.stuff.co.nz/_json) file periodically.
 - [x] Mock remote server response with [`moxios`](https://github.com/axios/moxios).
-- [ ] Connect to MongoDB database.
+- [x] Connect to MongoDB database.
 - [ ] Create a snapshot from the periodically downloaded data in the database with a timestamp.
 - [ ] Provide an `/api/stories` endpoint for query data from MongoDB.
 - [ ] The endpoint is graphql compatible.

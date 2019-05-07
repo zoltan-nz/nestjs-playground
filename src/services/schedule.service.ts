@@ -17,7 +17,7 @@ export class ScheduleService extends NestSchedule {
   private readonly articlesService: ArticlesService;
 
   // Every 10 seconds
-  @Cron('*/10 * * * * *')
+  @Cron('*/10 * * * * *', { key: 'test-key' })
   async downloadLatestArtciles() {
     this.jsonFetcher
       .fetch<Story>('https://www.stuff.co.nz/_json')
