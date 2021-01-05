@@ -24,7 +24,7 @@
     "@nestjs/core": "^6.2.4",
     "@nestjs/mongoose": "^6.1.2",
     "@nestjs/platform-express": "^6.2.4",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "mongoose": "^5.5.11",
     "nest-schedule": "^0.6.0",
     "nestjs-config": "^1.4.0",
