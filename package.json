@@ -1,4 +1,16 @@
 {
   "name": "nestjs-playground",
-  "packageManager": "yarn@3.3.0"
+  "version": "0.0.1",
+  "packageManager": "yarn@3.3.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "format": "prettier --cache --ignore-unknown -l --write '**'"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.1"
+  }
 }
