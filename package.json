@@ -8,9 +8,14 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo ru lint",
+    "dev": "turbo run dev",
     "format": "prettier --cache --ignore-unknown -l --write '**'"
   },
   "devDependencies": {
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.1",
+    "turbo": "^1.6.3"
   }
 }
